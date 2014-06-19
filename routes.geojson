@@ -6372,8 +6372,8 @@
               ]
             ]
           }
-        }
-         {
+        },
+        {
         "type": "Feature",
         "properties": {
             "desc": "This is a low-traffic, safe route through the guts of Midtown. W34th Ave is disconnected, allowing bikes but not cars."
