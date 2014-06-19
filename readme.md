@@ -16,7 +16,7 @@ Please contribute the last mile or so of your commute to this repository so that
 
 1. Clone the repo
 2. Add your route as a .geojson file in the /geojson directory
-3. Submit a pull request
+3. Submit a pull request to merge into the 'gh-pages' branch
 
 
 ## How to get your route into GeoJSON format
