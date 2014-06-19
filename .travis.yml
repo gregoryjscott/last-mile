@@ -1,1 +1,6 @@
+language: bash
+
 script: ./script/cibuild
+
+notifications:
+  email: false
