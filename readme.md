@@ -1,4 +1,4 @@
-# [View The Map](https://render.githubusercontent.com/view/geojson?url=https://raw.githubusercontent.com/ResourceDataInc/last-mile/master/routes.geojson)
+# [View The Map](http://resourcedatainc.github.io/last-mile/)
 
 <img src="https://travis-ci.org/ResourceDataInc/last-mile.svg">
 
@@ -15,7 +15,7 @@ Please contribute the last mile or so of your commute to this repository so that
 ## How to contribute
 
 1. Clone the repo
-2. Add your route to the routes.geojson file, in GeoJSON format
+2. Add your route as a .geojson file in the /geojson directory
 3. Submit a pull request
 
 
