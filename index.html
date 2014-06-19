@@ -17,7 +17,7 @@
 <!-- jQuery is required for this example. Uncomment this line -->
 <script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
 <script>
-var url = 'https://api.github.com/repos/ResourceDataInc/last-mile/contents/routes.geojson';
+var url = 'https://api.github.com/repos/ResourceDataInc/last-mile/contents/routes/routes.geojson?ref=app';
 
 var map = L.mapbox.map('map', 'examples.map-h67hf2ic')
   .setView([61.189100,-149.873723], 12);
@@ -27,6 +27,18 @@ function load() {
   // `application/vnd.github.v3.raw` to the Accept header
   // As with any other AJAX request, this technique is subject to the Same Origin Policy:
   // http://en.wikipedia.org/wiki/Same_origin_policy the server delivering the request should support CORS.
+  $.ajax({
+    headers: {
+      'Accept': 'application/vnd.github.v3.raw'
+    },
+    dataType: 'json',
+    url: url,
+    success: function(geojson) {
+        // On success add fetched data to the map.
+        L.mapbox.featureLayer(geojson).addTo(map);
+    }
+  });
+  
   $.ajax({
     headers: {
       'Accept': 'application/vnd.github.v3.raw'
