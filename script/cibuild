@@ -1,11 +1,12 @@
 #!/bin/sh
 
-result=$(curl -X POST --data @routes.geojson $data http://geojsonlint.com/validate 2>/dev/null)
-
-if [ "$result" = "{\"status\": \"ok\"}" ]; then
-  echo "Valid GeoJSON!"
-  exit 0
-else
-  echo "Invalid GeoJSON"
-  exit 1
-fi
+for filename in ../geojson/*.geojson; do
+	result=$(curl -X POST --data @$filename $data http://geojsonlint.com/validate 2>/dev/null)
+	if [ "$result" = "{\"status\": \"ok\"}" ]; then
+		echo "Valid GeoJSON!"
+	else
+		echo "Invalid GeoJSON"
+		exit 1
+	fi
+done
+exit 0
