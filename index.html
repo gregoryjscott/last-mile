@@ -43,7 +43,10 @@ function load() {
 				    url: file._links.self,
 				    success: function(geojson) {
 				        // On success add fetched data to the map.
-				        L.mapbox.featureLayer(geojson).addTo(map);
+				        L.mapbox.featureLayer(geojson)
+                        .eachLayer(function(layer) {
+                            layer.bindPopup(layer.feature.properties.desc);
+                        }).addTo(map);
 				    }
 				});
 			}
