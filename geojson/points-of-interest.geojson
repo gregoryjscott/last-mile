@@ -1,0 +1,33 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-symbol": "commercial",
+                "desc": "RDI"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -149.873723,
+                    61.189100
+                ]
+            }
+        },
+      {
+        "type": "Feature",
+          "properties": {
+            "marker-symbol": "suitcase",
+            "desc": "Crowne Plaza"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -149.884185,
+              61.174156
+            ]
+          }
+        }
+    ]
+}

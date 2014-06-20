@@ -1,1 +1,7 @@
-script: ./script/cibuild
+language: ruby
+ 
+script: 
+ - ./script/cibuild
+
+notifications:
+  email: false
