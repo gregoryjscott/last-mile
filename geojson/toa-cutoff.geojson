@@ -4,7 +4,7 @@
         {
             "type": "Feature",
             "properties": {
-              "desc": “Tour of Anchorage and Birch Meadow trails.  This shortcuts parts of Abbott and Elmore roads.  Dirt trail, suitable for mountain bikes and hybrid-type bikes, but not road bikes.
+              "desc": "Tour of Anchorage and Birch Meadow trails.  This shortcuts parts of Abbott and Elmore roads.  Dirt trail, suitable for mountain bikes and hybrid-type bikes, but not road bikes."
             },
             "geometry": {
                 "type": "MultiLineString",
