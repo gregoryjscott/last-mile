@@ -5,6 +5,8 @@
             "type": "Feature",
             "properties": {
                 "marker-symbol": "commercial",
+                "marker-color": "#33689c",
+                "marker-size": "large",
                 "desc": "RDI"
             },
             "geometry": {
