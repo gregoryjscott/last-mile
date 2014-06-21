@@ -1,6 +1,9 @@
 # [View The Map](http://resourcedatainc.github.io/last-mile/)
 
-<img src="https://travis-ci.org/ResourceDataInc/last-mile.svg">
+[![Build Status][build_png]][travis]
+
+[build_png]: https://travis-ci.org/ResourceDataInc/last-mile.png?branch=gh-pages
+[travis]: https://travis-ci.org/ResourceDataInc/last-mile
 
 ## The Last Mile
 
@@ -29,4 +32,4 @@ You can use [geojson.io](http://geojson.io) to draw your route on a map and get 
 
 When you submit a pull request, it will automatically check to ensure your geoJSON is valid.
 
-If you'd like to check yourself, you can run `./script/cibuild` locally, or pasting the contents of `routes.geojson` into http://geojsonlint.com.
+If you'd like to check yourself, you can run `./script/cibuild` locally, or pasting the contents of each file in the `geojson` folder into http://geojsonlint.com.
