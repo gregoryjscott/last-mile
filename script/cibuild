@@ -1,12 +1,15 @@
 #!/bin/sh
 
 errors=0
-for filename in $TRAVIS_BUILD_DIR/geojson/*.geojson; do
+echo "************************"
+echo "GeoJSON Validation"
+echo "************************"
+for filename in geojson/*.geojson; do
 	result=$(curl -X POST --data @$filename $data http://geojsonlint.com/validate 2>/dev/null)
 	if [ "$result" = "{\"status\": \"ok\"}" ]; then
-		echo $filename "passed GeoJSON validation."
+		echo "passed: " $filename
 	else
-		echo $filename "FAILED GeoJSON validation."
+		echo "FAILED: " $filename 
 		errors=1
 	fi
 done

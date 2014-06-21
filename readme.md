@@ -29,4 +29,4 @@ You can use [geojson.io](http://geojson.io) to draw your route on a map and get 
 
 When you submit a pull request, it will automatically check to ensure your geoJSON is valid.
 
-If you'd like to check yourself, you can run `./script/cibuild` locally, or pasting the contents of `routes.geojson` into http://geojsonlint.com.
+If you'd like to check yourself, you can run `./script/cibuild` locally, or pasting the contents of each file in the `routes` folder into http://geojsonlint.com.
