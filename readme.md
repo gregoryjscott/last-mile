@@ -1,6 +1,9 @@
 # [View The Map](http://resourcedatainc.github.io/last-mile/)
 
-<img src="https://travis-ci.org/ResourceDataInc/last-mile.svg">
+[![Build Status][build_png]][travis]
+
+[build_png]: https://travis-ci.org/ResourceDataInc/last-mile.png?branch=gh-pages
+[travis]: https://travis-ci.org/ResourceDataInc/last-mile
 
 ## The Last Mile
 
