@@ -33,31 +33,28 @@ function load() {
     dataType: 'json',
     url: url,
     success: function(files) {
-    	$.each(files, function (index,file){
-    		if (file.name.split('.').pop().toLowerCase() == 'geojson') {
-		    	$.ajax({
-				    headers: {
-				      'Accept': 'application/vnd.github.v3.raw'
-				    },
-				    dataType: 'json',
-				    url: file._links.self,
-				    success: function(geojson) {
-				        // On success add fetched data to the map.
-				        L.mapbox.featureLayer(geojson)
-                  .eachLayer(function(layer) {
-                    if(layer.feature.properties && layer.feature.properties.desc) {
-                      layer.bindPopup(layer.feature.properties.desc);
-                    }
-                  }).addTo(map);
-				    }
-				});
-			}
-    	});
-        
+      $.each(files, function (index,file){
+        if (file.name.split('.').pop().toLowerCase() == 'geojson') {
+          $.ajax({
+            headers: {
+              'Accept': 'application/vnd.github.v3.raw'
+            },
+            dataType: 'json',
+            url: file._links.self,
+            success: function(geojson) {
+              // On success add fetched data to the map.
+              L.mapbox.featureLayer(geojson)
+                .eachLayer(function(layer) {
+                  if(layer.feature.properties && layer.feature.properties.desc) {
+                    layer.bindPopup(layer.feature.properties.desc);
+                  }
+                }).addTo(map);
+              }
+          });
+        }
+      });
     }
   });
-  
-  
 }
 
 $(load);
