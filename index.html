@@ -15,9 +15,8 @@
 <div id='map'></div>
 
 <script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
+<script src='js/data.js'></script>
 <script>
-var url = 'https://api.github.com/repos/ResourceDataInc/last-mile/contents/geojson?ref=gh-pages';
-
 var map = L.mapbox.map('map', 'examples.map-h67hf2ic')
   .setView([61.189100,-149.873723], 12);
 
@@ -33,46 +32,22 @@ var pickColor = (function() {
 })();
 
 function load() {
-  // Fetch just the contents of a .geojson file from GitHub by passing
-  // `application/vnd.github.v3.raw` to the Accept header
-  // As with any other AJAX request, this technique is subject to the Same Origin Policy:
-  // http://en.wikipedia.org/wiki/Same_origin_policy the server delivering the request should support CORS.
-  $.ajax({
-    headers: {
-      'Accept': 'application/vnd.github.v3.raw'
-    },
-    dataType: 'json',
-    url: url,
-    success: function(files) {
-      $.each(files, function (index, file){
-        if (file.name.split('.').pop().toLowerCase() == 'geojson') {
-          $.ajax({
-            headers: {
-              'Accept': 'application/vnd.github.v3.raw'
-            },
-            dataType: 'json',
-            url: file._links.self,
-            success: function(geojson) {
-              $.each(geojson.features, function(index, value) {
-                $.extend(geojson.features[index].properties, {
-                  'stroke': pickColor(),
-                  'stroke-opacity': 0.5,
-                  'stroke-width': 5
-                });
-              });
-
-              L.mapbox.featureLayer(geojson)
-                .eachLayer(function(layer) {
-                  if(layer.feature.properties && layer.feature.properties.desc) {
-                    layer.bindPopup(layer.feature.properties.desc);
-                  }
-                }).addTo(map);
-            }
-          });
-        }
+  $.each(data, function(index, geojson) {
+    $.each(geojson.features, function(index, value) {
+      $.extend(geojson.features[index].properties, {
+        'stroke': pickColor(),
+        'stroke-opacity': 0.5,
+        'stroke-width': 5
       });
-    }
-  });
+    });
+
+    L.mapbox.featureLayer(geojson)
+      .eachLayer(function(layer) {
+        if(layer.feature.properties && layer.feature.properties.desc) {
+          layer.bindPopup(layer.feature.properties.desc);
+         }
+      }).addTo(map);
+  })
 }
 
 $(load);
