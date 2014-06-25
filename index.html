@@ -32,6 +32,7 @@ var pickColor = (function() {
 })();
 
 function load() {
+  // Iterate the geojson objects from the data found in data.js.
   $.each(data, function(index, geojson) {
     $.each(geojson.features, function(index, value) {
       $.extend(geojson.features[index].properties, {
