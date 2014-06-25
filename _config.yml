@@ -1,1 +1,1 @@
-exclude: ["geojson", "script", "readme.md"]
+exclude: ["geojson", "node_modules", "script", "Gruntfile.js", "package.json"]
