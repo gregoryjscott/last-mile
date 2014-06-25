@@ -1,4 +1,4 @@
-# [View The Map](http://resourcedatainc.github.io/last-mile/)
+# [View The Map](http://gregoryjscott.github.io/last-mile/)
 
 [![Build Status][build_png]][travis]
 
