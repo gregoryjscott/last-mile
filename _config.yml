@@ -1,0 +1,1 @@
+exclude: ["geojson", "script", "readme.md"]
